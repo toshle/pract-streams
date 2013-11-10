@@ -24,18 +24,3 @@ int main() {
     ofile.close();
     return 0;
 }
-
-int main2() {
-
-    ifstream img("image.jpg", ios::binary | ios::ate);
-    ofstream copy("image-copy.jpg", ios::binary);
-    int length = img.tellg();
-    char* data = new char[length];
-    img.seekg(0, ios::beg);
-    img.read(data, length);
-    copy.write(data, length);
-    img.close();
-    copy.close();
-
-    return 0;
-}
